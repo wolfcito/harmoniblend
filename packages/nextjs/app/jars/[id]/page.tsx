@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
-import { Header } from '~~/components/header'
 import { PROJECTS } from '~~/constants'
 
 const pools = [
@@ -27,7 +26,6 @@ export default function JarDetails() {
 
   return (
     <>
-      <Header></Header>
       <div className="bg-black">
         <div className={`bg-[url('/pools/pool001.jpg')] bg-no-repeat bg-cover h-[50vh]`}>
           <div className="h-[50vh] bg-gradient-to-b from-black/0 to-black/100"></div>

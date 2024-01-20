@@ -2,7 +2,6 @@
 
 import { useParams } from 'next/navigation'
 import { PaperClipIcon } from '@heroicons/react/20/solid'
-import { Header } from '~~/components/header'
 import { PROJECTS } from '~~/constants'
 
 export default function ProjectProfile() {
@@ -11,8 +10,7 @@ export default function ProjectProfile() {
 
   return (
     <>
-      <Header></Header>
-      <div className="bg-black">
+      <div>
         <div className={`bg-[url('${PROJECTS[id]['image']}')] bg-no-repeat bg-cover h-[50vh]`}>
           <div className="h-[50vh] bg-gradient-to-b from-black/0 to-black/100"></div>
         </div>

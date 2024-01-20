@@ -1,13 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import { Header } from '~~/components/header'
 
 const Profile = () => {
   return (
     <>
-      <Header></Header>
-      <div className="bg-black">
+      <div>
         <div className="container py-8 mx-auto">
           <div className="grid grid-cols-4 gap-6 px-4 sm:grid-cols-12">
             <div className="col-span-4 sm:col-span-3">

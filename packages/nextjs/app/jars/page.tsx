@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { Header } from '~~/components/header'
 
 const pools = [
   {
@@ -22,7 +21,6 @@ const pools = [
 const Jars = () => {
   return (
     <>
-      <Header></Header>
       <div className="p-6 md:p-14">
         <div className="bg-[url('/projects/project001.jpg')] bg-no-repeat bg-cover rounded-2xl border border-limelight overflow-hidden mb-12 p-10 min-h-[400px]">
           <h3 className="text-2xl font-semibold pt-96">Newest</h3>

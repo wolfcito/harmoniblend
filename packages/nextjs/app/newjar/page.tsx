@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Header } from '~~/components/header'
 
 const NewJar = () => {
   const [poolId, setPoolId] = useState('')
@@ -12,7 +11,6 @@ const NewJar = () => {
   }
   return (
     <>
-      <Header></Header>
       <h3 className="px-2 text-2xl font-semibold md:px-14">Create New Jar (Pool)</h3>
       <div className="flex items-center justify-center p-12">
         <div className="mx-auto w-full max-w-[700px]">

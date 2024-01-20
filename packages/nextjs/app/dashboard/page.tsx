@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Header } from '~~/components/header'
 
 const pools = [
   {
@@ -21,8 +20,7 @@ const pools = [
 
 const Dashboard = () => {
   return (
-    <div className="bg-black">
-      <Header></Header>
+    <div>
       <div className="p-6 md:p-14">
         <div className="flex flex-row justify-between">
           <h3 className="text-2xl font-semibold">Created Pools</h3>
