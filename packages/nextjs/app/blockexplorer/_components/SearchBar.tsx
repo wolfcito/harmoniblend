@@ -1,36 +1,36 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { isAddress, isHex } from "viem";
-import { hardhat } from "viem/chains";
-import { usePublicClient } from "wagmi";
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { isAddress, isHex } from 'viem'
+import { hardhat } from 'viem/chains'
+import { usePublicClient } from 'wagmi'
 
 export const SearchBar = () => {
-  const [searchInput, setSearchInput] = useState("");
-  const router = useRouter();
+  const [searchInput, setSearchInput] = useState('')
+  const router = useRouter()
 
-  const client = usePublicClient({ chainId: hardhat.id });
+  const client = usePublicClient({ chainId: hardhat.id })
 
   const handleSearch = async (event: React.FormEvent) => {
-    event.preventDefault();
+    event.preventDefault()
     if (isHex(searchInput)) {
       try {
-        const tx = await client.getTransaction({ hash: searchInput });
+        const tx = await client.getTransaction({ hash: searchInput })
         if (tx) {
-          router.push(`/blockexplorer/transaction/${searchInput}`);
-          return;
+          router.push(`/blockexplorer/transaction/${searchInput}`)
+          return
         }
       } catch (error) {
-        console.error("Failed to fetch transaction:", error);
+        console.error('Failed to fetch transaction:', error)
       }
     }
 
     if (isAddress(searchInput)) {
-      router.push(`/blockexplorer/address/${searchInput}`);
-      return;
+      router.push(`/blockexplorer/address/${searchInput}`)
+      return
     }
-  };
+  }
 
   return (
     <form onSubmit={handleSearch} className="flex items-center justify-end mb-5 space-x-3 mx-5">
@@ -45,5 +45,5 @@ export const SearchBar = () => {
         Search
       </button>
     </form>
-  );
-};
+  )
+}

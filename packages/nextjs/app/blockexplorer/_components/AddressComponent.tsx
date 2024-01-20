@@ -1,13 +1,13 @@
-import { BackButton } from "./BackButton";
-import { ContractTabs } from "./ContractTabs";
-import { Address, Balance } from "~~/components/scaffold-eth";
+import { BackButton } from './BackButton'
+import { ContractTabs } from './ContractTabs'
+import { Address, Balance } from '~~/components/scaffold-eth'
 
 export const AddressComponent = ({
   address,
   contractData,
 }: {
-  address: string;
-  contractData: { bytecode: string; assembly: string } | null;
+  address: string
+  contractData: { bytecode: string; assembly: string } | null
 }) => {
   return (
     <div className="m-10 mb-20">
@@ -31,5 +31,5 @@ export const AddressComponent = ({
       </div>
       <ContractTabs address={address} contractData={contractData} />
     </div>
-  );
-};
+  )
+}

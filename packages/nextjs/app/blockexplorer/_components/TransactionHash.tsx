@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { CheckCircleIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+import { useState } from 'react'
+import Link from 'next/link'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { CheckCircleIcon, DocumentDuplicateIcon } from '@heroicons/react/24/outline'
 
 export const TransactionHash = ({ hash }: { hash: string }) => {
-  const [addressCopied, setAddressCopied] = useState(false);
+  const [addressCopied, setAddressCopied] = useState(false)
 
   return (
     <div className="flex items-center">
@@ -22,10 +22,10 @@ export const TransactionHash = ({ hash }: { hash: string }) => {
         <CopyToClipboard
           text={hash as string}
           onCopy={() => {
-            setAddressCopied(true);
+            setAddressCopied(true)
             setTimeout(() => {
-              setAddressCopied(false);
-            }, 800);
+              setAddressCopied(false)
+            }, 800)
           }}
         >
           <DocumentDuplicateIcon
@@ -35,5 +35,5 @@ export const TransactionHash = ({ hash }: { hash: string }) => {
         </CopyToClipboard>
       )}
     </div>
-  );
-};
+  )
+}

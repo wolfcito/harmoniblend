@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
-import { PaginationButton, SearchBar, TransactionsTable } from "./_components";
-import type { NextPage } from "next";
-import { hardhat } from "viem/chains";
-import { useFetchBlocks } from "~~/hooks/scaffold-eth";
-import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
-import { notification } from "~~/utils/scaffold-eth";
+import { useEffect } from 'react'
+import { PaginationButton, SearchBar, TransactionsTable } from './_components'
+import type { NextPage } from 'next'
+import { hardhat } from 'viem/chains'
+import { useFetchBlocks } from '~~/hooks/scaffold-eth'
+import { useTargetNetwork } from '~~/hooks/scaffold-eth/useTargetNetwork'
+import { notification } from '~~/utils/scaffold-eth'
 
 const BlockExplorer: NextPage = () => {
-  const { blocks, transactionReceipts, currentPage, totalBlocks, setCurrentPage, error } = useFetchBlocks();
-  const { targetNetwork } = useTargetNetwork();
+  const { blocks, transactionReceipts, currentPage, totalBlocks, setCurrentPage, error } = useFetchBlocks()
+  const { targetNetwork } = useTargetNetwork()
 
   useEffect(() => {
     if (targetNetwork.id === hardhat.id && error) {
@@ -21,11 +21,11 @@ const BlockExplorer: NextPage = () => {
             - Did you forget to run <code className="italic bg-base-300 text-base font-bold">yarn chain</code> ?
           </p>
           <p className="mt-1 break-normal">
-            - Or you can change <code className="italic bg-base-300 text-base font-bold">targetNetwork</code> in{" "}
+            - Or you can change <code className="italic bg-base-300 text-base font-bold">targetNetwork</code> in{' '}
             <code className="italic bg-base-300 text-base font-bold">scaffold.config.ts</code>
           </p>
         </>,
-      );
+      )
     }
 
     if (targetNetwork.id !== hardhat.id) {
@@ -39,16 +39,16 @@ const BlockExplorer: NextPage = () => {
             block explorer is only for <code className="italic bg-base-300 text-base font-bold">localhost</code>.
           </p>
           <p className="mt-1 break-normal">
-            - You can use{" "}
+            - You can use{' '}
             <a className="text-accent" href={targetNetwork.blockExplorers?.default.url}>
               {targetNetwork.blockExplorers?.default.name}
-            </a>{" "}
+            </a>{' '}
             instead
           </p>
         </>,
-      );
+      )
     }
-  }, [error, targetNetwork]);
+  }, [error, targetNetwork])
 
   return (
     <div className="container mx-auto my-10">
@@ -56,7 +56,7 @@ const BlockExplorer: NextPage = () => {
       <TransactionsTable blocks={blocks} transactionReceipts={transactionReceipts} />
       <PaginationButton currentPage={currentPage} totalItems={Number(totalBlocks)} setCurrentPage={setCurrentPage} />
     </div>
-  );
-};
+  )
+}
 
-export default BlockExplorer;
+export default BlockExplorer

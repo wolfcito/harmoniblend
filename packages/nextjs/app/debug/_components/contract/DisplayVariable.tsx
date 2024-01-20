@@ -1,22 +1,22 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
-import { InheritanceTooltip } from "./InheritanceTooltip";
-import { displayTxResult } from "./utilsDisplay";
-import { Abi, AbiFunction } from "abitype";
-import { Address } from "viem";
-import { useContractRead } from "wagmi";
-import { ArrowPathIcon } from "@heroicons/react/24/outline";
-import { useAnimationConfig } from "~~/hooks/scaffold-eth";
-import { notification } from "~~/utils/scaffold-eth";
+import { useEffect } from 'react'
+import { InheritanceTooltip } from './InheritanceTooltip'
+import { displayTxResult } from './utilsDisplay'
+import { Abi, AbiFunction } from 'abitype'
+import { Address } from 'viem'
+import { useContractRead } from 'wagmi'
+import { ArrowPathIcon } from '@heroicons/react/24/outline'
+import { useAnimationConfig } from '~~/hooks/scaffold-eth'
+import { notification } from '~~/utils/scaffold-eth'
 
 type DisplayVariableProps = {
-  contractAddress: Address;
-  abiFunction: AbiFunction;
-  refreshDisplayVariables: boolean;
-  inheritedFrom?: string;
-  abi: Abi;
-};
+  contractAddress: Address
+  abiFunction: AbiFunction
+  refreshDisplayVariables: boolean
+  inheritedFrom?: string
+  abi: Abi
+}
 
 export const DisplayVariable = ({
   contractAddress,
@@ -34,15 +34,15 @@ export const DisplayVariable = ({
     functionName: abiFunction.name,
     abi: abi,
     onError: error => {
-      notification.error(error.message);
+      notification.error(error.message)
     },
-  });
+  })
 
-  const { showAnimation } = useAnimationConfig(result);
+  const { showAnimation } = useAnimationConfig(result)
 
   useEffect(() => {
-    refetch();
-  }, [refetch, refreshDisplayVariables]);
+    refetch()
+  }, [refetch, refreshDisplayVariables])
 
   return (
     <div className="space-y-1 pb-2">
@@ -61,7 +61,7 @@ export const DisplayVariable = ({
         <div>
           <div
             className={`break-all block transition bg-transparent ${
-              showAnimation ? "bg-warning rounded-sm animate-pulse-fast" : ""
+              showAnimation ? 'bg-warning rounded-sm animate-pulse-fast' : ''
             }`}
           >
             {displayTxResult(result)}
@@ -69,5 +69,5 @@ export const DisplayVariable = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

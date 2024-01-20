@@ -1,10 +1,10 @@
 type AddressCodeTabProps = {
-  bytecode: string;
-  assembly: string;
-};
+  bytecode: string
+  assembly: string
+}
 
 export const AddressCodeTab = ({ bytecode, assembly }: AddressCodeTabProps) => {
-  const formattedAssembly = assembly.split(" ").join("\n");
+  const formattedAssembly = assembly.split(' ').join('\n')
 
   return (
     <div className="flex flex-col gap-3 p-4">
@@ -21,5 +21,5 @@ export const AddressCodeTab = ({ bytecode, assembly }: AddressCodeTabProps) => {
         </pre>
       </div>
     </div>
-  );
-};
+  )
+}

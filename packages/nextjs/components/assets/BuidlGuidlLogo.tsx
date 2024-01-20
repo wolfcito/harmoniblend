@@ -14,5 +14,5 @@ export const BuidlGuidlLogo = ({ className }: { className: string }) => {
         clipRule="evenodd"
       />
     </svg>
-  );
-};
+  )
+}
