@@ -25,6 +25,13 @@ module.exports = {
           warning: '#FFCF72',
           error: '#FF8863',
 
+          purple: '#6D73FF',
+          tomato: '#FF6739',
+          'light-gray': '#E5E6EF',
+          'light-purple': '#9378F3',
+          'dark-pink': '#9378F2',
+          'light-pink': '#D05CFF',
+
           '--rounded-btn': '9999rem',
 
           '.tooltip': {
@@ -56,6 +63,13 @@ module.exports = {
           success: '#34EEB6',
           warning: '#FFCF72',
           error: '#FF8863',
+
+          purple: '#6D73FF',
+          tomato: '#FF6739',
+          'light-gray': '#E5E6EF',
+          'light-purple': '#9378F3',
+          'dark-pink': '#9378F2',
+          'light-pink': '#D05CFF',
 
           '--rounded-btn': '9999rem',
 
