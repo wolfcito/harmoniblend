@@ -1,14 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ButtonNeon, ButtonSimple } from '../button'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
+import { Button, ButtonSimple } from '~~/components/button'
 
 export function Header() {
   return (
     <div className="flex items-center justify-between w-full p-6">
-      <Link href={'/'} className="text-xl text-limelight">
-        <Image src={'/logo.png'} alt=" logo" width={50} height={50} className="w-auto h-7" />
+      <Link href={'/'} className="flex text-xl">
+        <Image src={'/harmoniblend-logo.png'} alt=" logo" width={50} height={50} className="w-auto h-7" />
+        <TextAnimatedGradient text={'Harmoniblend'} />
       </Link>
+
       <div className="flex items-center">
         <Link href={'/jars'} className="flex mr-10 text-md hover:underline">
           Vote!
@@ -35,11 +37,11 @@ export function Header() {
               >
                 {(() => {
                   if (!connected) {
-                    return <ButtonNeon onClick={openConnectModal} label="Connect Wallet" />
+                    return <Button onClick={openConnectModal} label="Connect Wallet" />
                   }
 
                   if (chain.unsupported) {
-                    return <ButtonNeon onClick={openChainModal} label=" Wrong network" />
+                    return <Button onClick={openChainModal} label=" Wrong network" />
                   }
 
                   return (
@@ -89,5 +91,13 @@ export function Header() {
         </ConnectButton.Custom>
       </div>
     </div>
+  )
+}
+
+const TextAnimatedGradient = ({ text }: { text: string }) => {
+  return (
+    <span className="inline-flex animate-text-gradient bg-gradient-to-r from-primary via-[#8678f9] to-violet-500 bg-[200%_auto] bg-clip-text text-xl text-transparent">
+      {text}
+    </span>
   )
 }

@@ -7,75 +7,28 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        scaffoldEth: {
-          primary: '#93BBFB',
-          'primary-content': '#212638',
-          secondary: '#DAE8FF',
-          'secondary-content': '#212638',
-          accent: '#93BBFB',
-          'accent-content': '#212638',
+        wolfcitoTheme: {
+          primary: '#6D73FF',
+          'primary-content': '#FF6739',
+          secondary: '#E5E6EF',
+          'secondary-content': '#9378F3',
+          accent: '#9378F2',
+          'accent-content': '#D05CFF',
           neutral: '#212638',
           'neutral-content': '#ffffff',
-          'base-100': '#ffffff',
-          'base-200': '#f4f8ff',
-          'base-300': '#DAE8FF',
-          'base-content': '#212638',
+          'base-100': '#FF6739',
+          'base-200': '#FFFFFF',
+          'base-300': '#FF6739',
+          'base-content': '#000000',
           info: '#93BBFB',
           success: '#34EEB6',
           warning: '#FFCF72',
           error: '#FF8863',
 
-          purple: '#6D73FF',
-          tomato: '#FF6739',
-          'light-gray': '#E5E6EF',
-          'light-purple': '#9378F3',
-          'dark-pink': '#9378F2',
-          'light-pink': '#D05CFF',
-
           '--rounded-btn': '9999rem',
 
           '.tooltip': {
             '--tooltip-tail': '6px',
-          },
-          '.link': {
-            textUnderlineOffset: '2px',
-          },
-          '.link:hover': {
-            opacity: '80%',
-          },
-        },
-      },
-      {
-        scaffoldEthDark: {
-          primary: '#212638',
-          'primary-content': '#F9FBFF',
-          secondary: '#323f61',
-          'secondary-content': '#F9FBFF',
-          accent: '#4969A6',
-          'accent-content': '#F9FBFF',
-          neutral: '#F9FBFF',
-          'neutral-content': '#385183',
-          'base-100': '#385183',
-          'base-200': '#2A3655',
-          'base-300': '#212638',
-          'base-content': '#F9FBFF',
-          info: '#385183',
-          success: '#34EEB6',
-          warning: '#FFCF72',
-          error: '#FF8863',
-
-          purple: '#6D73FF',
-          tomato: '#FF6739',
-          'light-gray': '#E5E6EF',
-          'light-purple': '#9378F3',
-          'dark-pink': '#9378F2',
-          'light-pink': '#D05CFF',
-
-          '--rounded-btn': '9999rem',
-
-          '.tooltip': {
-            '--tooltip-tail': '6px',
-            '--tooltip-color': 'oklch(var(--p))',
           },
           '.link': {
             textUnderlineOffset: '2px',
@@ -94,6 +47,14 @@ module.exports = {
       },
       animation: {
         'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'text-gradient': 'text-gradient 3s linear infinite',
+      },
+      keyframes: {
+        'text-gradient': {
+          to: {
+            backgroundPosition: '200% center',
+          },
+        },
       },
     },
   },

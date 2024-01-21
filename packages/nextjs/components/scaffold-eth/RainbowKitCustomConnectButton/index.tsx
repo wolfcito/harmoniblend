@@ -7,6 +7,7 @@ import { AddressQRCodeModal } from './AddressQRCodeModal'
 import { WrongNetworkDropdown } from './WrongNetworkDropdown'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { Address } from 'viem'
+import { Button } from '~~/components/button'
 import { useAutoConnect, useNetworkColor } from '~~/hooks/scaffold-eth'
 import { useTargetNetwork } from '~~/hooks/scaffold-eth/useTargetNetwork'
 import { getBlockExplorerAddressLink } from '~~/utils/scaffold-eth'
@@ -32,9 +33,9 @@ export const RainbowKitCustomConnectButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button className="btn btn-primary btn-sm" onClick={openConnectModal} type="button">
+                  <Button className="btn btn-secondary btn-sm" onClick={openConnectModal}>
                     Connect Wallet
-                  </button>
+                  </Button>
                 )
               }
 
@@ -45,7 +46,7 @@ export const RainbowKitCustomConnectButton = () => {
               return (
                 <>
                   <div className="flex flex-col items-center mr-1">
-                    <Balance address={account.address as Address} className="min-h-0 h-auto" />
+                    <Balance address={account.address as Address} className="h-auto min-h-0" />
                     <span className="text-xs" style={{ color: networkColor }}>
                       {chain.name}
                     </span>

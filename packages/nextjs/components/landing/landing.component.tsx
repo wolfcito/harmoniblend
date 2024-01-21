@@ -1,41 +1,33 @@
 import Image from 'next/image'
-import { Article } from '../article'
-import { ButtonNeon } from '../button'
-import { Title } from '../title'
+import { Article } from '~~/components/article'
+import { Button } from '~~/components/button'
+import { Title } from '~~/components/title'
 
 export function Landing() {
-  const createPool = () => {
-    console.log('pool created')
-  }
-
-  const createApplication = () => {
-    console.log('application created')
-  }
-
   const createProfile = () => {
     console.log('profile created')
   }
 
   return (
-    <Article>
-      <div className="flex flex-col max-w-2xl">
-        <Title label="Fund actions that matter" />
+    <Article className="rounded-3xl bg-gradient-to-r from-primary/80 to-[#9378F3]/80 text-white mt-3">
+      <div className="flex flex-col flex-1 mx-7">
+        <Title label="Harmoniblend" />
 
-        <p className="py-10 text-2xl font-semibold">Transparent, Secure, and Fueled by Giving.</p>
-        <p className="py-10 text-slate-300">
-          Explore, Fund, Decide - Revolutionizing collective financing with Arbitrum and Allo Protocol. Empowering real
-          world help.
-        </p>
+        <p className="text-2xl font-semibold">Discover the magical spring where your initiatives come to life.</p>
+        <p className="">Each dream is a drop that propels community creation.</p>
         <p className="py-5 space-x-5">
-          <ButtonNeon onClick={createProfile} label="Create Profile" />
-
-          <ButtonNeon onClick={createPool} label="Create Pool" />
-
-          <ButtonNeon onClick={createApplication} label="Apply to Pool" />
+          <Button onClick={createProfile} label="Create Profile" />
         </p>
       </div>
-
-      <Image src="/Harmoniblend.png" alt="Harmoniblend image" width={200} height={300} className="h-auto w-80" />
+      <div>
+        <Image
+          src="/images/gold-coins-pool-golden1.jpg"
+          alt="Harmoniblend image"
+          width={200}
+          height={300}
+          className="self-end h-auto w-96 rounded-r-2xl"
+        />
+      </div>
     </Article>
   )
 }
