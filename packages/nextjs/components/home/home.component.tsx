@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Landing } from '../landing'
 import { Title } from '../title'
 import clsx from 'clsx'
+import { nanoid } from 'nanoid'
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
 
 const stats = [
@@ -353,7 +354,7 @@ export function Home() {
                     </div>
                     <ul>
                       {activityItem.details?.map(detail => (
-                        <li className="text-sm leading-6 text-gray-500" key={window.crypto.randomUUID()}>
+                        <li className="text-sm leading-6 text-gray-500" key={nanoid()}>
                           {detail}
                         </li>
                       ))}
